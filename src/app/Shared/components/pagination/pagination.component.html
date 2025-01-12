@@ -1,0 +1,30 @@
+
+<nav class="flex flex-row flex-nowrap justify-between md:justify-center items-center" aria-label="Pagination">
+  <a
+    *ngFor="let pag of links"
+    class="md:flex w-10 h-10 mx-1 justify-center cursor-pointer items-center rounded-full border border-gray-200 bg-white text-black hover:border-gray-300"
+    (click)="otherPage(pag.url)"
+    [ngClass]="{'bg-amber-500 text-white' : pag.active}">
+
+    <!-- Bouton Previous -->
+    <ng-container *ngIf="pag.label.includes('Previous')">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="block w-5 h-5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
+    </ng-container>
+
+    <!-- Bouton Next -->
+    <ng-container *ngIf="pag.label.includes('Next')">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="block w-5 h-5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+      </svg>
+    </ng-container>
+
+    <!-- Labels des pages -->
+    <ng-container *ngIf="!pag.label.includes('Next') && !pag.label.includes('Previous')">
+      {{ pag.label }}
+    </ng-container>
+  </a>
+</nav>
+
+
