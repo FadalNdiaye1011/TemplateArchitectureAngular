@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { ParentService } from '../../shared/services/parent.service';
 import { environment } from '../../../environments/environment.development';
 import { User } from '../../shared/interfaces/user';
-import { Login } from '../interfaces/login';
 
 @Injectable({
   providedIn: 'root'
